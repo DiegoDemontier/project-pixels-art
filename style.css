@@ -45,3 +45,21 @@ header {
   border: 1px solid black;
   display: inline-block;
 }
+
+#clear-board {
+  width: 100px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+#generate-board {
+  width: 100px;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+#board-size {
+  width: 100px;
+  height: 25px;
+  margin-bottom: 20px;
+}

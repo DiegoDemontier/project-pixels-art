@@ -27,7 +27,7 @@ window.onload = (function () {
     }
   }
   tableRow();
-  /* cria as linhas da tabela */
+  /* cria as colunas da tabela */
   function boxRow(box) {
     for (let index = 0; index < 5; index += 1) {
       const cell = document.createElement('div');
@@ -35,7 +35,7 @@ window.onload = (function () {
       box.appendChild(cell);
     }
   }
-  /* cria as células da table */
+  /* cria as linhas da table */
   function createLine() {
     const row = document.querySelectorAll('.row');
     for (let index = 0; index < 5; index += 1) {
@@ -62,7 +62,7 @@ window.onload = (function () {
     }, false);
   }
   selectColor();
-
+  /* colore a celula clicada */
   function fillCell() {
     document.addEventListener('click', function (event) {
       const color = document.querySelector('.selected').style.backgroundColor;
@@ -72,4 +72,17 @@ window.onload = (function () {
     }, false);
   }
   fillCell();
+  /* limpa todo quadro com a cor branca */
+  function cleanFrame() {
+    const button = document.querySelector('#clear-board');
+    const cell = document.querySelectorAll('.pixel')
+    button.addEventListener('click', function() {
+      for (let index = 0; index < cell.length; index += 1) {
+        cell[index].style.backgroundColor = 'white';
+      }
+    })
+  }
+  cleanFrame();
+ 
+
 });
