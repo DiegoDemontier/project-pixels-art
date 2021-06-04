@@ -3,25 +3,34 @@
   left: 0;
 }
 
-body {
-  width: 100%;
+html, body {
+  font-family: 'Flavors', cursive;
   height: 100%;
+  width: 100%;
+  margin: 0;
+  display: table;
+  background-color: rgb(148, 241, 179);
 }
 
 header {
-  width: 100%;
   height: auto;
-  background-color: aqua;
+  margin-bottom: 200px;
+  background-color: rgb(175, 235, 235);
 }
 
 #title {
+  letter-spacing: 5px;
+  font-size: 80px;
+  font-weight: lighter;
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 #color-palette {
+  margin: 0 auto;
   padding-left: 0!important;
+  list-style: none;
 }
 
 .color {
@@ -63,3 +72,18 @@ header {
   height: 25px;
   margin-bottom: 20px;
 }
+
+
+.main {
+  height: 100%;
+  width: 40%;
+  background-color: rgb(175, 235, 235);
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
