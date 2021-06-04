@@ -14,10 +14,10 @@ function cor() {
 }
 function colorPalette() {
   const color = document.querySelectorAll('.color');
-  color[0].style.backgroundColor = 'black';
-  color[1].style.backgroundColor = `rgb(${cor()}, ${cor()}, ${cor()}, ${cor()})`;
-  color[2].style.backgroundColor = `rgb(${cor()}, ${cor()}, ${cor()}, ${cor()})`;
-  color[3].style.backgroundColor = `rgb(${cor()}, ${cor()}, ${cor()}, ${cor()})`;
+  color[0].style.backgroundColor = 'rgb(0, 0, 0)';
+  color[1].style.backgroundColor = `rgb(${cor()}, ${cor()}, ${cor()})`;
+  color[2].style.backgroundColor = `rgb(${cor()}, ${cor()}, ${cor()})`;
+  color[3].style.backgroundColor = `rgb(${cor()}, ${cor()}, ${cor()})`;
 }
 colorPalette();
 /* Cria tabela em branco */
@@ -25,6 +25,7 @@ function creatColumn(box, number) {
   for (let index = 0; index < number; index += 1) {
     const cell = document.createElement('div');
     cell.className = 'pixel';
+    cell.style.backgroundColor = 'rgb(255, 255, 255)';
     box.appendChild(cell);
   }
 }
@@ -76,7 +77,7 @@ function cleanFrame() {
   const cell = document.querySelectorAll('.pixel');
   button.addEventListener('click', () => {
     for (let index = 0; index < cell.length; index += 1) {
-      cell[index].style.backgroundColor = 'white';
+      cell[index].style.backgroundColor = 'rgb(255, 255, 255)';
     }
   });
 }
