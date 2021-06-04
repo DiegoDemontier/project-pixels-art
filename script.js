@@ -8,12 +8,16 @@ function createPalette() {
 }
 createPalette();
 /* preenche a paleta com cores pré definidas */
+function cor() {
+  const number = Math.random() * 256;
+  return number;
+}
 function colorPalette() {
   const color = document.querySelectorAll('.color');
   color[0].style.backgroundColor = 'black';
-  color[1].style.backgroundColor = `rgb(${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)})`;
-  color[2].style.backgroundColor = `rgb(${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)})`;
-  color[3].style.backgroundColor = `rgb(${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)}, ${(Math.random() * 256)})`;
+  color[1].style.backgroundColor = `rgb(${cor()}, ${cor()}, ${cor()}, ${cor()})`;
+  color[2].style.backgroundColor = `rgb(${cor()}, ${cor()}, ${cor()}, ${cor()})`;
+  color[3].style.backgroundColor = `rgb(${cor()}, ${cor()}, ${cor()}, ${cor()})`;
 }
 colorPalette();
 /* Cria tabela em branco */
@@ -47,7 +51,7 @@ function resetClassColor() {
 function selectColor() {
   const color = document.querySelectorAll('.color')[0];
   color.classList.add('selected');
-  document.addEventListener('click', function (event) {
+  document.addEventListener('click', (event) => {
     if (event.target.classList.contains('color')) {
       resetClassColor();
       event.target.classList.add('selected');
@@ -57,19 +61,20 @@ function selectColor() {
 selectColor();
 /* colore a celula clicada */
 function fillCell() {
-  document.addEventListener('click', function (event) {
-    const color = document.querySelector('.selected').style.backgroundColor;
-    if (event.target.classList.contains('pixel')) {
-      event.target.style.backgroundColor = color;
-    }
-  }, false);
+  const color2 = document.querySelectorAll('.pixel');
+  for (let index = 0; index < color2.length; index += 1) {
+    color2[index].addEventListener('click', () => {
+      const color = document.querySelector('.selected').style.backgroundColor;
+      color2[index].style.backgroundColor = color;
+    });
+  }
 }
 fillCell();
 /* limpa todo quadro com a cor branca */
 function cleanFrame() {
   const button = document.querySelector('#clear-board');
   const cell = document.querySelectorAll('.pixel');
-  button.addEventListener('click', function () {
+  button.addEventListener('click', () => {
     for (let index = 0; index < cell.length; index += 1) {
       cell[index].style.backgroundColor = 'white';
     }
@@ -99,11 +104,13 @@ function removePixel() {
 
 function tableControls() {
   const button = document.querySelector('#generate-board');
-  button.addEventListener('click', function () {
+  button.addEventListener('click', () => {
     const number = document.querySelector('#board-size');
     removePixel();
     setNumber(number.value);
     number.value = '';
+    fillCell();
+    cleanFrame();
   });
 }
 tableControls();

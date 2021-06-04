@@ -3,8 +3,8 @@
   left: 0;
 }
 
-html, body {
-  font-family: 'Flavors', cursive;
+html , body {
+  font-family: Flavors, cursive;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -21,7 +21,7 @@ header {
 #title {
   letter-spacing: 5px;
   font-size: 80px;
-  font-weight: lighter;
+  font-weight: 100;
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
@@ -29,7 +29,7 @@ header {
 
 #color-palette {
   margin: 0 auto;
-  padding-left: 0!important;
+  padding-left: 0; /* ! important; */
   list-style: none;
 }
 
@@ -43,7 +43,7 @@ header {
 }
 
 #pixel-board {
-  display: table; 
+  display: table;
 }
 
 .pixel {
