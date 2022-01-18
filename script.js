@@ -97,10 +97,7 @@ function setNumber(size) {
 }
 
 function removePixel() {
-  const pixels = document.querySelectorAll('.column');
-  for (let index = 0; index < pixels.length; index += 1) {
-    document.querySelectorAll('.column')[0].remove();
-  }
+  document.querySelector('#pixel-board').replaceChildren();
 }
 
 function tableControls() {
